@@ -119,7 +119,7 @@ def save_qualifying_loans(qualifying_loans):
         
         for loans in qualifying_loans:
                  
-            csvwriter.writerow(loans.values())
+            csvwriter.writerow(loans)
 
 
 def run():
