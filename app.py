@@ -7,6 +7,7 @@ Example:
     $ python app.py
 """
 import csv
+from email import header
 import sys
 import fire
 import questionary
@@ -112,15 +113,16 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
-       
+        header = ["Lender","Max Loan Amount","Max LTV","Max DTI","Credit Score","Interest Rate"]  
         csvpath = questionary.text("Do you want to save the CSV file?").ask()
         csvpath = Path("qualified_loans.csv")
         with open (csvpath, "w", newline="") as csvfile:
             csvwriter = csv.writer(csvfile, delimiter=',')
+            csvwriter.writerow(header)
         
             for loans in qualifying_loans:
                  
-                csvwriter.writerows(loans)
+                csvwriter.writerows([loans])
 
 
 def run():
