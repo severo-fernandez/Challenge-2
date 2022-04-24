@@ -117,9 +117,9 @@ def save_qualifying_loans(qualifying_loans):
         with open (csvpath, "w", newline="") as csvfile:
             csvwriter = csv.writer(csvfile, delimiter=',')
         
-        for loans in qualifying_loans:
+            for loans in qualifying_loans:
                  
-            csvwriter.writerow(loans)
+                csvwriter.writerows(loans)
 
 
 def run():
