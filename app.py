@@ -119,7 +119,7 @@ def save_qualifying_loans(qualifying_loans, csvpath):
         csvpath = Path("qualified_loans.csv")
 
               
-        print(f"Your file is saving. {csvpath}.")   
+           
         return save_csv(qualifying_loans, csvpath)        
         
 def run():
