@@ -43,11 +43,13 @@ def save_csv(qualifying_loans, csvpath):
         A CSV file saved as whatever name the user inputs that is located in
         the folder the user inputs
     """
+
+    header = ["Lender","Max Loan Amount","Max LTV","Max DTI","Credit Score","Interest Rate"]
     with open (csvpath, "w", newline="") as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
-        csvwriter.writerow([header])
+        csvwriter.writerow(header)
 
         for loans in qualifying_loans:
-                 
-            csvwriter.writerow([loans])
+                
+            csvwriter.writerows([loans])
     
