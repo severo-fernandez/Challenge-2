@@ -109,14 +109,15 @@ def save_qualifying_loans(qualifying_loans, csvpath):
 
         """Saves the qualifying loans to a CSV file.
 
-    Args:
+        Args:
         qualifying_loans (list of lists): The qualifying bank loans.
-    """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
-    # YOUR CODE HERE!
-        header = ["Lender","Max Loan Amount","Max LTV","Max DTI","Credit Score","Interest Rate"]  
-        csvpath = questionary.text("Do you want to save the CSV file? yes or no?").ask()
-        csvpath = Path("qualified_loans.csv")
+        """
+        # @TODO: Complete the usability dialog for savings the CSV Files.
+        # YOUR CODE HERE!
+        
+        csvpath = questionary.confirm("Do you want to save the CSV file?").ask()
+        csvpath = questionary.path("Where would you like to save the file?").ask()
+        ##csvpath = Path("qualified_loans.csv")
 
               
            
