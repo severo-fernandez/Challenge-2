@@ -5,6 +5,7 @@ This contains a helper function for loading and saving CSV files.
 
 """
 import csv
+from email import header
 
 
 def load_csv(csvpath):
@@ -44,8 +45,9 @@ def save_csv(qualifying_loans, csvpath):
     """
     with open (csvpath, "w", newline="") as csvfile:
         csvwriter = csv.writer(csvfile, delimiter=',')
-        
+        csvwriter.writerow([header])
+
         for loans in qualifying_loans:
                  
-            csvwriter.writerow(loans.values())
+            csvwriter.writerow([loans])
     

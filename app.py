@@ -9,6 +9,7 @@ Example:
 import csv
 from email import header
 import sys
+from tkinter.messagebox import YES
 import fire
 import questionary
 from pathlib import Path
@@ -104,7 +105,7 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     return bank_data_filtered
 
 
-def save_qualifying_loans(qualifying_loans):
+def save_qualifying_loans(qualifying_loans, csvpath):
 
         """Saves the qualifying loans to a CSV file.
 
@@ -114,17 +115,13 @@ def save_qualifying_loans(qualifying_loans):
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
         header = ["Lender","Max Loan Amount","Max LTV","Max DTI","Credit Score","Interest Rate"]  
-        csvpath = questionary.text("Do you want to save the CSV file?").ask()
+        csvpath = questionary.text("Do you want to save the CSV file? yes or no?").ask()
         csvpath = Path("qualified_loans.csv")
-        with open (csvpath, "w", newline="") as csvfile:
-            csvwriter = csv.writer(csvfile, delimiter=',')
-            csvwriter.writerow(header)
+
+              
+        print(f"Your file is saving. {csvpath}.")   
+        return save_csv(qualifying_loans, csvpath)        
         
-            for loans in qualifying_loans:
-                 
-                csvwriter.writerows([loans])
-
-
 def run():
     """The main function for running the script."""
 
@@ -140,7 +137,7 @@ def run():
     )
 
     # Save qualifying loans
-    save_qualifying_loans(qualifying_loans)
+    save_qualifying_loans(qualifying_loans,csvpath="qualified_loans.csv")
 
 
 if __name__ == "__main__":
