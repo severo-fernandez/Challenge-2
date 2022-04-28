@@ -1,0 +1,50 @@
+   24  __conda_reactivate() {     \local ask_conda;     ask_conda="$(PS1="${PS1:-}" __conda_exe shell.posix reactivate)" || \return;     \eval "$ask_conda";     __conda_hashr; }
+   25  conda() {     \local cmd="${1-__missing__}";     case "$cmd" in         activate|deactivate)             __conda_activate "$@";             ;;         install|update|upgrade|remove|uninstall)             __conda_exe "$@" || \return;             __conda_reactivate;             ;;         *)             __conda_exe "$@";             ;;     esac; }
+   26  if [ -z "${CONDA_SHLVL+x}" ]; then     \export CONDA_SHLVL=0     if [ -n "${_CE_CONDA:+x}" ] && [ -n "${WINDIR+x}" ]; then         PATH="$(\dirname "$CONDA_EXE")/condabin${PATH:+":${PATH}"}";     else         PATH="$(\dirname "$(\dirname "$CONDA_EXE")")/condabin${PATH:+":${PATH}"}";     fi;     \export PATH;      if [ -z "${PS1+x}" ]; then         PS1=;     fi; fi
+   27  stock_price = 71.60
+   28  estimated_value = 65.4
+   29  if stock_price < estimated_value:;     print("Buy this stock because it is on sale!")
+   30  stock_price = 71.60
+   31  estimated_value = 65.4
+   32  if stock_price < estimated_value:;     print("Buy this stock because it is on sale!")
+   33  cd desktop
+   34  ls
+   35  cd FinTech-Workspace/
+   36  ls
+   37  cd Python_Project/
+   38  ls
+   39  cd Challenge_Files/
+   40  ls
+   41  cd 'Module 2 Challenge'/
+   42  conda activate dev
+   43  code .
+   44  ls
+   45  cd Challenge-2/
+   46  ls
+   47  python3 app.py
+   48  python app.py
+   49  python app.py
+   50  python app.py
+   51  git status
+   52  git add .
+   53  git commit -m <cleaned up code around save csv function>
+   54  git commit -m<cleaned up code areound save csv function>
+   55  git commit -m "cleaned up code around save CSV function"
+   56  git status
+   57  git push
+   58  python app.py
+   59  python app.py
+   60  python app.py
+   61  python app.py
+   62  git status
+   63  git add .
+   64  git commit -m "Markdown on README.md"
+   65  git status
+   66  git push
+   67  git add .
+   68  git commit -m "attempt 2 at adding a screenshot from local folder"
+   69  git push
+   70  git add .
+   71  git commit -m "attempt 3 on screenshot"
+   72  git push
+   73  history 50 > terminal_history.txt
