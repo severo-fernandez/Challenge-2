@@ -68,7 +68,7 @@ Once the user inputs their data the program will calculate their monthly debt to
 
 The program uses these criteria to filter the daily_rate_sheet only for loand the applicant qualifies for.
 
-![alt text](screenshot_app.py.png\screenshot_app.py.png)
+![Below is a screenshot of the CLI of the program](Challenge-2\screenshot_app.py.jpg)
 
 ---
 
