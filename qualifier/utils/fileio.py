@@ -5,7 +5,7 @@ This contains a helper function for loading and saving CSV files.
 
 """
 import csv
-from email import header
+
 
 
 def load_csv(csvpath):

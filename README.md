@@ -1,33 +1,86 @@
-# Project Title
+# **Loan Qualifier Application**
 
-Just after the title, introduce your project by describing attractively what the project is about and what is the main problem that inspires you to create this project or what is the main contribution for the potential user of your project.
+
+
+This is a **command line application** to match applicants with qualifying loans.
 
 ---
 
 ## Technologies
 
-Describe the technologies required to use your project such as programming languages, libraries, frameworks, and operating systems. Be sure to include the specific versions of any critical dependencies that you have used in the stable version of your project.
+Python
+
+- import sys
+
+- from tkinter.messagebox import YES
+
+- import fire
+
+- import questionary
+
+- from pathlib import Path
+
+- from qualifier.utils.fileio import (load_csv, save_csv) *for both functions to run must import csv file within appropriate file*
+
+- from qualifier.utils.calculators import (
+    calculate_monthly_debt_ratio,
+    calculate_loan_to_value_ratio,
+
+- from qualifier.filters.max_loan_size import filter_max_loan_size
+from qualifier.filters.credit_score import filter_credit_score
+from qualifier.filters.debt_to_income import filter_debt_to_income
+from qualifier.filters.loan_to_value import filter_loan_to_value
+
 
 ---
 
 ## Installation Guide
 
-In this section, you should include detailed installation notes containing code blocks and screenshots.
+- `import sys`
+
+- `from tkinter.messagebox import YES`
+
+- `import fire`
+
+- `import questionary`
+
+- `import pathlib import Path`
+
+- `from qualifier.utils.fileio import (load_csv, save_csv)`
+
+- `from qualifier.utils.calculators import (calculate_monthly_debt_ratio,  calculate_loan_to_value_ratio)`
+
+- `from qualifier.filters.max_loan_size import filter_max_loan_size`
+
+- `from qualifier.filters.credit_score import filter_credit_score`
+
+- `from qualifier.filters.debt_to_income import filter_debt_to_income`
+
+- `from qualifier.filters.loan_to_value import filter_loan_to_value`
 
 ---
 
 ## Usage
 
-This section should include screenshots, code blocks, or animations explaining how to use your project.
+This program asks the applicant 5 questions to obtain `credit_score`, `debt`, `income`, `loan_amount`, and `home_value`
+
+Once the user inputs their data the program will calculate their monthly debt to income ratio and their loan to value ratio.
+
+The program uses these criteria to filter the daily_rate_sheet only for loand the applicant qualifies for.
+
+![alt text](screenshot_app.py.png\screenshot_app.py.png)
 
 ---
 
 ## Contributors
 
-In this section, list all the people who contribute to this project. You might want recruiters or potential collaborators to reach you, so include your contact email and, optionally, your LinkedIn or Twitter profile.
+Severo Fernandez
+
+severocf@gmail.com
+
 
 ---
 
 ## License
 
-When you share a project on a repository, especially a public one, it's important to choose the right license to specify what others can and can't with your source code and files. Use this section to include the license you want to use.
+[MIT]
